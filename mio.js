@@ -11,8 +11,10 @@ $(document).ready(function () {
     $(".externo").click(function () {
         espera();
     });
+	/*
     var online = navigator.onLine;
     if (!online) {
         document.location.href = "error.html"
-    }      
+    } 
+	*/     
 });

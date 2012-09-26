@@ -1,0 +1,3 @@
+[0926/195128:ERROR:network_change_notifier_win.cc(111)] WSALookupServiceBegin failed with: 87
+[0926/195143:INFO:CONSOLE(0)] "Uncaught ReferenceError: EdgeDOM is not defined," source: about:blank(0)
+[0926/195539:INFO:CONSOLE(0)] "body id == stage," source: http://127.0.0.1:54321/_DRIVE_C_EVIRD_/Users/julio/Documents/My%20Dropbox/github/webhoroscopes/edge_includes/edge.authoring.0.1.6.min.js(93)

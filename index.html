@@ -248,7 +248,7 @@ display:block;
 font-weight:bold;
 }
 
-img{
+.conte img{
 width:35px;
 }
 td{
@@ -345,14 +345,14 @@ text-align:center;
     <br/><br/>
     <br/>    
 </div>
-<div id="errorcon" style="display:none">
+<div id="errorcon" style="display:none;text-align:center">
     
     <h1 style="text-align:center">This app require an internet connection (wifi, 3g, whatever ...), please enable your connection and <br />
     
      <a style="text-align:center" href="index.html">try again</a></h1>
     <br />
     <p align="center">
-    <img src="errorcon.jpg" />
+    <img src="errorcon.jpg" width="200" />
     </p>
 </div>
 <div id="testcon">
@@ -360,12 +360,13 @@ text-align:center;
     <h1>Loading...</h1>
     <script>
         if (navigator.onLine == "online" || navigator.onLine) {
-            alert(navigator.onLine)
+        
+        
             $("#testcon").hide();
             $("#errorcon").hide();
             $("#page").show();
         } else {
-            alert(navigator.onLine)
+        
             $("#testcon").hide();
             $("#errorcon").show();
             $("#page").hide();

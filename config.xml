@@ -13,6 +13,8 @@
         bitelchux
     </author>
   <icon src="icon.png" />
+  <gap:splash src="splash.png" />
+  <access origin="*" />
   <preference name="show-splash-screen-spinner" value="true" />
   <preference name="stay-in-webview" value="true" />
   <preference name="permissions" value="none"/>
