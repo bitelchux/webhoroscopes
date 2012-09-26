@@ -1,9 +1,13 @@
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml" manifest="/m?manifest=1">  
-<head> 
-
-
-<title>Cuanto le falta a mi autobus</title>
+<?xml version="1.0"  encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Web wraper</title> 
+<meta name="viewport" content="target-densitydpi=medium-dpi,width=device-width,initial-scale=1,user-scalable=no" />  
+<meta name="title" content="Web wraper" /> 
+<meta name="language" content="en" /> 
+<meta name="robots" content="All" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="block.js"></script>
 <script type="text/javascript" src="mio.js"></script>
@@ -11,35 +15,46 @@
     function irazod(cual) {
         var cual = cual.options[cual.options.selectedIndex].value;        
         espera();
-        $('#conte').load("http://dailyhoroscopesmobi.com/iphoneindex.php?" + cual, function () {
-        
+        $('#conte').load("http://dailyhoroscopesmobi.com/iphoneindex.php?" + cual, function () {     
             $.unblockUI();
         });
     }
     function cbset(cual) {
         cb.options.selectedIndex=cual
     }
+    $(document).ready(function () {
+    /*
+        $("a").click(function () {
+
+        });
+    */
+    });
 </script>
 <style>
 *{
-font-family:verdana;
+font-family:Georgia, Helvetica, Arial, Sans-Serif;;
 color:black;
+}
+.blockPage
+{
+    border-bottom-left-radius: 9px 9px;
+    border-bottom-right-radius: 9px 9px;
+    border-top-left-radius: 9px 9px;
+    border-top-right-radius: 9px 9px;
+    -moz-border-radius-topleft: 0.6em;
+    -moz-border-radius-topright: 0.6em;
 }
 td,li,p,body,div,a{
 font-size:14px;
 }
-
-    *{
-      font-family:Helvetica, Verdana;
-    }
     body
     {
-    	background-color:white;
+        background-color:white;
         color:black;
-overflow-x:hidden;
-margin:0px;
-padding:0px;
-      font-family:Helvetica, Verdana;
+        overflow-x:hidden;
+        margin:0px;
+        padding:0px;
+        
     }    
     a
     {
@@ -97,28 +112,26 @@ font-weight:bold;
 vertical-align:middle;
 color:white;
 }
-.header{
-border:1px solid #456f9a;
-background:#5e87b0;
-color:#fff;
-font-weight:bold;
-text-shadow:0 -1px 1px #254f7a;
-background-image:-moz-linear-gradient(top,#81a8ce,#5e87b0);
-background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#81a8ce),color-stop(1,#5e87b0));
--ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#81a8ce',EndColorStr='#5e87b0')";
-color: white;
-font-weight:bold;
-padding: 5px 0px 0px 0px;
--moz-border-radius-topleft:0.6em;
--moz-border-radius-topright:0.6em;
-min-height:45px;
-padding:0px;
-vertical-align:middle;
-text-align:center;
-width:100%;
+.header
+{
+    text-align:center;
+    color:Gray;
+-webkit-box-shadow: 0 1px 3px rgba(34, 25, 25, 0.2);
+-ms-box-shadow: 0 1px 3px rgba(34,25,25,0.2);
+box-shadow: 0 1px 3px rgba(34, 25, 25, 0.2);
+border-bottom: 1px solid #BFBFBF;
+padding-left: 10px;
+margin: 0 -10px;
+height: 49px;
+position: fixed;
+top: 0px;
+left: 0px;
+width: 100%;
+background: #F2F2F2 url('mobile_gradient.png') 0 0 repeat-x;
+
 }
 .header h1{
-color:white
+color:gray
 }
 .item{
 background:url("http://freeandroidmusthave.com/itembg.gif");
@@ -247,89 +260,111 @@ text-align:center;
 </style>
 </head>
 <body>
-
-<div class="header"> 
-<h1>Daily Horoscope digest</h1> 
-</div><!-- /header --> 
+<div id="page" style="display:none">
+    <div class="header"> 
+    <br />
+    <h1>Daily Horoscope digest</h1> 
+    </div><!-- /header --> 
  
 
-<p align="center" style="text-align:center">
-<select onchange="irazod(this)" id="cb" style="width:80%">
-<option value="num=0&de-hoy-para=aries">Aries</option>
-<option value="num=1&de-hoy-para=taurus">Taurus</option>
-<option value="num=2&de-hoy-para=gemini">Gemini</option>
-<option value="num=3&de-hoy-para=cancer">Cancer</option>
-<option value="num=4&de-hoy-para=leo">Leo</option>
-<option value="num=5&de-hoy-para=virgo">Virgo</option>
-<option value="num=6&de-hoy-para=libra">Libra</option>
-<option value="num=7&de-hoy-para=scorpio">Scorpio</option>
-<option value="num=8&de-hoy-para=sagittarius">Sagittarius</option>
-<option value="num=9&de-hoy-para=capricorn">Capricorn</option>
-<option value="num=10&de-hoy-para=aquarius">Aquarius</option>
-<option value="num=11&de-hoy-para=pisces">Pisces</option>
-</select>
-</p>
-<div id="conte">
-<table width="90%">
-<tr>
-<td width="25%">
-<div onclick="cbset(0);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=0&de-hoy-para=aries',function() { $.unblockUI();})">
-<img src="0.png"><br />Aries</div>
-</td>
-<td width="25%">
-<div onclick="cbset(1);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=1&de-hoy-para=taurus'),function() { $.unblockUI();})">
-<img src="1.png"><br />Taurus</div>
-</td>
-<td width="25%">
-<div onclick="cbset(2);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=2&de-hoy-para=gemini',function() { $.unblockUI();})">
-<img src="2.png"><br />Gemini</div>
-</td>
-<td width="25%">
-<div onclick="cbset(3);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=3&de-hoy-para=cancer',function() { $.unblockUI();})">
-<img src="3.png"><br />Cancer</div>
-</td>
-</tr>
-<tr>
-<td>
-<div onclick="cbset(4);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=4&de-hoy-para=leo',function() { $.unblockUI();})">
-<img src="4.png"><br />Leo</div>
-</td>
-<td>
-<div onclick="cbset(5);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=5&de-hoy-para=virgo',function() { $.unblockUI();})">
-<img src="5.png"><br />Virgo</div>
-</td>
-<td>
-<div onclick="cbset(6);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=6&de-hoy-para=libra',function() { $.unblockUI();})">
-<img src="6.png"><br />Libra</div>
-</td>
-<td>
-<div onclick="cbset(7);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=7&de-hoy-para=scorpio',function() { $.unblockUI();})">
-<img src="7.png"><br />Scorpio</div>
-</td>
-</tr>
-<tr>
-<td>
-<div onclick="cbset(8);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=8&de-hoy-para=sagittarius',function() { $.unblockUI();})">
-<img src="8.png"><br />Sagittarius</div>
-</td>
-<td>
-<div onclick="cbset(9);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=9&de-hoy-para=capricorn',function() { $.unblockUI();})">
-<img src="9.png"><br />Capricorn</div>
-</td>
-<td>
-<div onclick="cbset(10);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=10&de-hoy-para=aquarius',function() { $.unblockUI();})">
-<img src="10.png"><br />Aquarius</div>
-</td>
-<td>
-<div onclick="cbset(11);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=11&de-hoy-para=pisces',function() { $.unblockUI();})">
-<img src="11.png"><br />Pisces</div>
-</td>
-</tr>
-</table>
+    <p align="center" style="text-align:center">
+    <select onchange="irazod(this)" id="cb" style="width:80%">
+    <option value="num=0&de-hoy-para=aries">Aries</option>
+    <option value="num=1&de-hoy-para=taurus">Taurus</option>
+    <option value="num=2&de-hoy-para=gemini">Gemini</option>
+    <option value="num=3&de-hoy-para=cancer">Cancer</option>
+    <option value="num=4&de-hoy-para=leo">Leo</option>
+    <option value="num=5&de-hoy-para=virgo">Virgo</option>
+    <option value="num=6&de-hoy-para=libra">Libra</option>
+    <option value="num=7&de-hoy-para=scorpio">Scorpio</option>
+    <option value="num=8&de-hoy-para=sagittarius">Sagittarius</option>
+    <option value="num=9&de-hoy-para=capricorn">Capricorn</option>
+    <option value="num=10&de-hoy-para=aquarius">Aquarius</option>
+    <option value="num=11&de-hoy-para=pisces">Pisces</option>
+    </select>
+    </p>
+    <div id="conte">
+    <table width="90%">
+    <tr>
+    <td width="25%">
+    <div onclick="cbset(0);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=0&de-hoy-para=aries',function() { $.unblockUI();})">
+    <img src="0.png"><br />Aries</div>
+    </td>
+    <td width="25%">
+    <div onclick="cbset(1);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=1&de-hoy-para=taurus'),function() { $.unblockUI();})">
+    <img src="1.png"><br />Taurus</div>
+    </td>
+    <td width="25%">
+    <div onclick="cbset(2);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=2&de-hoy-para=gemini',function() { $.unblockUI();})">
+    <img src="2.png"><br />Gemini</div>
+    </td>
+    <td width="25%">
+    <div onclick="cbset(3);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=3&de-hoy-para=cancer',function() { $.unblockUI();})">
+    <img src="3.png"><br />Cancer</div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <div onclick="cbset(4);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=4&de-hoy-para=leo',function() { $.unblockUI();})">
+    <img src="4.png"><br />Leo</div>
+    </td>
+    <td>
+    <div onclick="cbset(5);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=5&de-hoy-para=virgo',function() { $.unblockUI();})">
+    <img src="5.png"><br />Virgo</div>
+    </td>
+    <td>
+    <div onclick="cbset(6);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=6&de-hoy-para=libra',function() { $.unblockUI();})">
+    <img src="6.png"><br />Libra</div>
+    </td>
+    <td>
+    <div onclick="cbset(7);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=7&de-hoy-para=scorpio',function() { $.unblockUI();})">
+    <img src="7.png"><br />Scorpio</div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <div onclick="cbset(8);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=8&de-hoy-para=sagittarius',function() { $.unblockUI();})">
+    <img src="8.png"><br />Sagittarius</div>
+    </td>
+    <td>
+    <div onclick="cbset(9);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=9&de-hoy-para=capricorn',function() { $.unblockUI();})">
+    <img src="9.png"><br />Capricorn</div>
+    </td>
+    <td>
+    <div onclick="cbset(10);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=10&de-hoy-para=aquarius',function() { $.unblockUI();})">
+    <img src="10.png"><br />Aquarius</div>
+    </td>
+    <td>
+    <div onclick="cbset(11);espera();$('#conte').load('http://dailyhoroscopesmobi.com/iphoneindex.php?num=11&de-hoy-para=pisces',function() { $.unblockUI();})">
+    <img src="11.png"><br />Pisces</div>
+    </td>
+    </tr>
+    </table>
+    </div>
+    <br/><br/>
+    <br/>
+
+    <a href="googl">asdasd</a>
 </div>
-<br/><br/>
-<br/>
-
-
+<div id="errorcon" style="display:none">
+    <h1>NO CON</h1>
+</div>
+<div id="testcon">
+    <img src="loading.gif" />
+    <h1>Loading...</h1>
+    <script>
+        if (navigator.onLine == "online" || navigator.onLine) {
+            
+            $("#testcon").hide();
+            $("#errorcon").hide();
+            $("#page").show();
+        } else {
+            
+            $("#testcon").hide();
+            $("#errorcon").show();
+            $("#page").hide();
+        }
+    </script>
+</div>
 </body>
 </html>
