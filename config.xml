@@ -10,8 +10,9 @@
     </description>
 
     <author href="http://bitelchux.com" email="bitelchux@gmail.com">
-        PhoneGap Team
+        bitelchux
     </author>
+  <icon src="icon.png" />
   <preference name="show-splash-screen-spinner" value="true" />
   <preference name="stay-in-webview" value="true" />
   <preference name="permissions" value="none"/>
