@@ -345,19 +345,26 @@ text-align:center;
     <br/>    
 </div>
 <div id="errorcon" style="display:none">
-    <h1>NO CON</h1>
+    
+    <h1 style="text-align:center">This app require an internet connection (wifi, 3g, whatever ...), please enable your connection and <br />
+    
+     <a style="text-align:center" href="index.html">try again</a></h1>
+    <br />
+    <p align="center">
+    <img src="errorcon.jpg" />
+    </p>
 </div>
 <div id="testcon">
     <img src="loading.gif" />
     <h1>Loading...</h1>
     <script>
         if (navigator.onLine == "online" || navigator.onLine) {
-            
+            alert(navigator.onLine)
             $("#testcon").hide();
             $("#errorcon").hide();
             $("#page").show();
         } else {
-            
+            alert(navigator.onLine)
             $("#testcon").hide();
             $("#errorcon").show();
             $("#page").hide();
